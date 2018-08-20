@@ -1,9 +1,15 @@
 pipeline {
     agent { docker { image 'hseeberger/scala-sbt' } }
+
+    environment {
+        DB_ENGINE    = 'sqlite'
+    }
+
     stages {
         stage('build') {
             steps {
                 sh 'java -version'
+                sh 'echo $DB_ENGINE'
             }
         }
     }
