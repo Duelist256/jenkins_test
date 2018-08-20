@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'scala -version'
+                sh 'java -version'
             }
         }
     }
